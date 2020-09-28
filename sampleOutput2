@@ -1,0 +1,42 @@
+POST REQUEST : localhost:8080/getPointsForCustomer
+
+##scenario :  multiple transactions in same month
+
+##This code valid for range of past 3 months From Current Date
+
+
+Request Input : 
+
+[
+    {
+        "customerName": "customer1",
+        "customerOrderList": [
+            {
+                "transactionNumber": "1",
+                "billAmount": 120,
+                "transactionDate": "08/23/2020"
+            },
+             {
+                "transactionNumber": "1",
+                "billAmount": 120,
+                "transactionDate": "08/25/2020"
+            }
+        ]
+    }
+]
+
+
+
+
+Output :
+
+[
+    {
+        "customerName": "customer1",
+        "pointsForFirstMonth": 180,
+        "pointsForSecondMonth": 0,
+        "pointsForThirdMonth": 0,
+        "pointsForCurrentMonth": 0,
+        "pointsForThreeMonths": 180
+    }
+]
